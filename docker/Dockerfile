@@ -17,10 +17,6 @@ ENV LANG en_US.utf8
 RUN apt-get update && apt-get install -y live-build && \
     rm -rf /var/lib/apt/lists/*
 
-# Allow password-less 'sudo' for all users in group 'sudo'
-RUN sed "s/^%sudo.*/%sudo\tALL=(ALL) NOPASSWD:ALL/g" -i /etc/sudoers && \
-    chmod a+s /usr/sbin/useradd /usr/sbin/groupadd /usr/sbin/gosu /usr/sbin/usermod
-
 # Cleanup
 RUN rm -rf /tmp/*
 
