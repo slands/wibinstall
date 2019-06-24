@@ -6,4 +6,6 @@ set -e
           --memtest none \
           --bootappend-live "boot=live config hostname=wibinstall"
 
+echo "dosfstools" > config/package-lists/dosfstools.list.chroot
+
 exec "$@"
