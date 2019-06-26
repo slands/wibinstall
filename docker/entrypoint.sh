@@ -8,4 +8,11 @@ set -e
 
 echo "dosfstools" > config/package-lists/dosfstools.list.chroot
 
+mkdir -p config/includes.chroot/sbin
+mkdir -p config/includes.chroot/azotel/src
+mkdir -p config/includes.chroot/azotel/img
+
+chmod 777 config/includes.chroot/sbin
+chmod 777 config/includes.chroot/azotel/{src,img}
+
 exec "$@"
