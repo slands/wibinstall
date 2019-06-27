@@ -15,4 +15,8 @@ mkdir -p config/includes.chroot/azotel/img
 chmod 777 config/includes.chroot/sbin
 chmod 777 config/includes.chroot/azotel/{src,img}
 
+mkdir -p config/includes.chroot/lib/systemd/system/
+cp /docker/getty@.service config/includes.chroot/lib/systemd/system/
+chown root.root config/includes.chroot/lib/systemd/system/getty@.service
+
 exec "$@"
